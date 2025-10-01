@@ -14,7 +14,7 @@ A navigation class handles naviating to a webcontainer, back and forward and log
 ## Architecture
 
 ### Components
-1. **Session** - Manages application-level instances for each user
+1. **Session** - Hold the isntance of the WebNavigationManager Class
 2. **wp_MainShell** - Main shell page that hosts containers
 3. **wc_Base** - Base class for all navigable WebContainers
 4. **WebNavigationManager** - Handles navigation logic and history
