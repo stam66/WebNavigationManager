@@ -25,13 +25,13 @@ A navigation class handles naviating to a webcontainer, back and forward and log
 
 ### 1. **Session** Setup
 Add the following properties to your Session:
-```xojo
+```
 Public MainShell as wp_MainShell
 Public Navigation as WebNavigationManager
 ```
 
 ### In the Session's **Opening** event:
-```xojo
+```
 xojoMainShell = New wp_MainShell
 MainShell.Show
 Navigation = New WebNavigationManager(MainShell)
@@ -43,13 +43,13 @@ Navigation.NavigateTo(w)
 
 ### 2. **wp_MainShell** Configuration
 Properties:
-- xojoPublic ContentArea As WebContainer  
+- Public ContentArea As WebContainer  
 
 Controls:
 - Placeholder (WebContainer) - The area where content containers are embedded
 
 Methods:
-```xojo
+```
 Sub RepositionContent()
   If ContentArea IsA wc_Base Then
     wc_Base(ContentArea).EmbedInto(Placeholder)
@@ -64,10 +64,10 @@ Events:
 ### 3. wc_Base WebContainer Class
 This is a base class that all navigable WebContainers should inherit from.
 Properties:
-- xojoPublic ContainerID As String  // Unique identifier for logging
+- Public ContainerID As String  // Unique identifier for logging
 Public Position As PositionEnum     // Center, TopLeft, etc.
 - PositionEnum:
-```xojo
+```
 Enum PositionEnum
   Center
   TopLeft
@@ -75,7 +75,7 @@ End Enum
 ```
 
 Key Method - EmbedInto:
-```xojo
+```
 Public Sub EmbedInto(target As WebContainer)
   // Only embed if not already embedded
   If Self.Parent = Nil Then
@@ -193,7 +193,7 @@ End Sub
 
 ## Usage Example
 ### Creating a New Container
-```xojo
+```
 // Create a new container that inherits from wc_Base
 Var myContainer As New wc_MyCustomContainer
 myContainer.ContainerID = "MyContainer"
