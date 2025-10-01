@@ -13,14 +13,8 @@ A navigation class handles naviating to a webcontainer, back and forward and log
 
 ## Simple usage in web app:
 ```
-// Navigate to it
-Session.Navigation.NavigateTo(myContainer)
-
-Navigation Controls  
-// Navigate back
-Session.Navigation.NavigateBack()  
-
-// Navigate forward
+Session.Navigation.NavigateTo(myContainer)  
+Session.Navigation.NavigateBack()   
 Session.Navigation.NavigateForward()
 ```
 
