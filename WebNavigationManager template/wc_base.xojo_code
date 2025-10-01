@@ -15,51 +15,24 @@ Inherits webcontainer
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub EmbedInto(target As WebView)
-		  // Only embed if not already embedded
-		  If Self.Parent = Nil Then
-		    Self.EmbedWithin(target, 0, 0, Self.Width, Self.Height)
-		  End If
+		Sub EmbedInto(target As WebContainer)
+		  // Don't embed - assume already embedded
+		  // Just handle positioning and locking
 		  
-		  // Then position it
 		  Select Case Position
-		  Case PositionEnum.Center
-		    Self.Left = (target.Width - Self.Width) / 2
-		    Self.Top = (target.Height - Self.Height) / 2
-		    
 		  Case PositionEnum.TopLeft
-		    // Let the container stretch with its parent
 		    Self.LockLeft = True
 		    Self.LockTop = True
 		    Self.LockRight = True
 		    Self.LockBottom = True
 		    
-		    Self.Left = 0
-		    Self.Top = 0
+		  Case PositionEnum.Center
+		    Var targetW As Integer = target.Width
+		    Var targetH As Integer = target.Height
+		    Self.Left = (targetW - Self.Width) / 2
+		    Self.Top = (targetH - Self.Height) / 2
 		  End Select
 		  
-		  Self.Width = Min(Self.Width, target.Width)
-		  Self.Height = Min(Self.Height, target.Height)
-		  
-		  
-		  ' Select Case Position
-		  ' Case PositionEnum.Center
-		  ' Self.Left = (target.Width - Self.Width) / 2
-		  ' Self.Top = (target.Height - Self.Height) / 2
-		  ' 
-		  ' Case PositionEnum.TopLeft
-		  ' // Let the container stretch with its parent
-		  ' Self.LockLeft = True
-		  ' Self.LockTop = True
-		  ' Self.LockRight = True
-		  ' Self.LockBottom = True
-		  ' 
-		  ' Self.Left = 0
-		  ' Self.Top = 0
-		  ' End Select
-		  ' 
-		  ' Self.Width = Min(Self.Width, target.Width)
-		  ' Self.Height = Min(Self.Height, target.Height)
 		End Sub
 	#tag EndMethod
 

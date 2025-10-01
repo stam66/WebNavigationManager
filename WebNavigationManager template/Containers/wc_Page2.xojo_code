@@ -142,7 +142,7 @@ End
 		  Title = "Page 2"
 		  Icon = "Page"
 		  Position = PositionEnum.Center
-		  ContainerID = "wc_pagw2"   
+		  ContainerID = "wc_page2"   
 		  
 		End Sub
 	#tag EndMethod

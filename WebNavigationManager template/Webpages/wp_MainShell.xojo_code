@@ -132,22 +132,13 @@ Begin WebPage wp_MainShell
       Top             =   28
       Underline       =   False
       Visible         =   True
-      Width           =   1098
+      Width           =   915
       _mPanelIndex    =   -1
    End
 End
 #tag EndWebPage
 
 #tag WindowCode
-	#tag Method, Flags = &h0
-		Sub RepositionContent()
-		  If ContentArea IsA wc_Base Then
-		    wc_Base(ContentArea).EmbedInto(Placeholder)
-		  End If
-		End Sub
-	#tag EndMethod
-
-
 	#tag Property, Flags = &h0
 		ContentArea As WebContainer
 	#tag EndProperty
@@ -156,16 +147,6 @@ End
 #tag EndWindowCode
 
 #tag Events Placeholder
-	#tag Event
-		Sub Shown()
-		  RepositionContent
-		End Sub
-	#tag EndEvent
-	#tag Event
-		Sub Resized()
-		  RepositionContent
-		End Sub
-	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty

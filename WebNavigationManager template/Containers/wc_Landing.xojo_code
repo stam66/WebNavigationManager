@@ -142,7 +142,7 @@ End
 		  Title = "Welcome"
 		  Icon = "home"
 		  RoleRequired = ""
-		  Position = PositionEnum.Center
+		  Position = PositionEnum.TopLeft
 		  ContainerID = "wc_Landing"   
 		  
 		  
