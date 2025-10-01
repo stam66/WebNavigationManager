@@ -11,6 +11,19 @@ The system is based on a page template where the background eleements are fixed 
 These containers are a subclass of a subclass of WebContainer that contains embedding instructures (center or topLeft placement for exmaple)
 A navigation class handles naviating to a webcontainer, back and forward and logs the activity.
 
+## Simple usage in web app:
+```
+// Navigate to it
+Session.Navigation.NavigateTo(myContainer)
+
+Navigation Controls  
+// Navigate back
+Session.Navigation.NavigateBack()  
+
+// Navigate forward
+Session.Navigation.NavigateForward()
+```
+
 ## Architecture
 
 ### Components
